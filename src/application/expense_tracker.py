@@ -31,3 +31,12 @@ class ExpenseTracker:
         for expense in self._expenses:
             if start_date <= expense["date"] <= end_date:
                 print(expense)
+
+    def save_expenses(self, filename):
+        self._file_persister.save_expenses(self._expenses, filename)
+
+    def load_expenses(self, filename):
+        self._expenses = self._file_persister.load_expenses(filename)
+
+    def export_expenses(self, filename):
+        self._file_persister.export_to_csv(self._expenses, filename)

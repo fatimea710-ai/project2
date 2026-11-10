@@ -21,3 +21,8 @@ class ExpenseTracker:
     def display_expenses(self):
         for expense in self._expenses:
             print(expense)
+
+    def filter_by_category(self, category):
+        for expense in self._expenses:
+            if expense["category"].lower() == category.lower():
+                print(expense)

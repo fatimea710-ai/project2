@@ -26,3 +26,8 @@ class ExpenseTracker:
         for expense in self._expenses:
             if expense["category"].lower() == category.lower():
                 print(expense)
+
+    def filter_by_date(self, start_date, end_date):
+        for expense in self._expenses:
+            if start_date <= expense["date"] <= end_date:
+                print(expense)
